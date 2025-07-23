@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 background: none;
                 border: none;
                 font-size: 1.5rem;
-                color: #333;
+                color: white;
                 cursor: pointer;
                 padding: 0.5rem;
             `;
@@ -131,20 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Enhanced scroll effect for navbar (references .navbar from styles.css)
+    // FIXED: Enhanced scroll effect for navbar - let CSS handle styling
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (navbar) {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
             } else {
                 navbar.classList.remove('scrolled');
-                navbar.style.background = '#fff';
-                navbar.style.backdropFilter = 'none';
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
         }
     });
@@ -174,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Enhanced animation on scroll (works with service-card, portfolio-item, stat classes from styles.css)
+    // Enhanced animation on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -190,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe elements for animation (these classes should exist in styles.css)
+    // Observe elements for animation
     document.querySelectorAll('.service-card, .portfolio-item, .stat').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -217,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, 500);
     }
 
-    // Portfolio item hover effects (enhance the portfolio-item class from styles.css)
+    // Portfolio item hover effects
     document.querySelectorAll('.portfolio-item').forEach(item => {
         item.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px) scale(1.02)';
@@ -226,24 +220,24 @@ document.addEventListener('DOMContentLoaded', function() {
         
         item.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
         });
     });
 
-    // Service card enhanced hover effects (works with service-card class from styles.css)
+    // Service card enhanced hover effects
     document.querySelectorAll('.service-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-8px) scale(1.02)';
-            this.style.boxShadow = '0 15px 35px rgba(37, 99, 235, 0.15)';
+            this.style.boxShadow = '0 15px 35px rgba(116, 185, 255, 0.2)';
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
         });
     });
 
-    // Button ripple effect for .btn-primary and .btn-secondary from styles.css
+    // Button ripple effect
     document.querySelectorAll('.btn-primary, .btn-secondary, .cta-button').forEach(button => {
         button.addEventListener('click', function(e) {
             const ripple = document.createElement('span');

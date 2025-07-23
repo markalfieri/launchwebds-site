@@ -11,8 +11,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #2c3e50;
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
 .container {
@@ -27,7 +27,7 @@ body {
 
 .navbar {
     background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     top: 0;
@@ -36,9 +36,9 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(44, 62, 80, 0.95);
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container {
@@ -153,7 +153,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -252,14 +252,14 @@ body {
 
 .services {
     padding: 80px 0;
-    background: white;
+    background: #000000;
 }
 
 .services h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #ffffff;
     font-weight: 700;
 }
 
@@ -272,12 +272,12 @@ body {
 }
 
 .service-card {
-    background: white;
+    background: #1a1a1a;
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
-    border: 1px solid #e9ecef;
+    border: 1px solid #333333;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -295,19 +295,19 @@ body {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(116, 185, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(116, 185, 255, 0.3);
     border-color: #74b9ff;
 }
 
 .service-card h3 {
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .service-card p {
-    color: #6c757d;
+    color: #cccccc;
     line-height: 1.6;
 }
 
@@ -317,7 +317,7 @@ body {
 
 .about {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: #111111;
 }
 
 .about-content {
@@ -329,14 +329,14 @@ body {
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: #ffffff;
     font-weight: 700;
 }
 
 .about p {
     font-size: 1.1rem;
     margin-bottom: 3rem;
-    color: #6c757d;
+    color: #cccccc;
     line-height: 1.7;
 }
 
@@ -350,15 +350,16 @@ body {
 .stat {
     text-align: center;
     padding: 2rem;
-    background: white;
+    background: #1a1a1a;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
+    border: 1px solid #333333;
 }
 
 .stat:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .stat h3 {
@@ -372,7 +373,7 @@ body {
 }
 
 .stat p {
-    color: #6c757d;
+    color: #cccccc;
     font-weight: 500;
     margin: 0;
 }
@@ -383,14 +384,14 @@ body {
 
 .portfolio {
     padding: 80px 0;
-    background: white;
+    background: #000000;
 }
 
 .portfolio h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #ffffff;
     font-weight: 700;
 }
 
@@ -401,23 +402,23 @@ body {
 }
 
 .portfolio-item {
-    background: white;
+    background: #1a1a1a;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
-    border: 1px solid #e9ecef;
+    border: 1px solid #333333;
 }
 
 .portfolio-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
 .portfolio-item .placeholder-image {
     height: 200px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    color: #6c757d;
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    color: #cccccc;
     border: none;
     border-radius: 0;
     font-weight: 500;
@@ -425,7 +426,7 @@ body {
 
 .portfolio-item h3 {
     padding: 1.5rem;
-    color: #2c3e50;
+    color: #ffffff;
     font-weight: 600;
     margin: 0;
 }
@@ -472,12 +473,12 @@ body {
 .contact-form input,
 .contact-form textarea {
     padding: 1rem 1.5rem;
-    border: 2px solid #e9ecef;
+    border: 2px solid #333333;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: white;
-    color: #2c3e50;
+    background: #1a1a1a;
+    color: #ffffff;
 }
 
 .contact-form input:focus,
@@ -517,7 +518,7 @@ body {
    ======================================== */
 
 .footer {
-    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: white;
     padding: 60px 0 20px;
 }
@@ -544,10 +545,15 @@ body {
     margin-bottom: 0.5rem;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    color: #cccccc;
 }
 
 .footer-section ul li:hover {
     opacity: 1;
+}
+
+.footer-section p {
+    color: #cccccc;
 }
 
 .footer-bottom {

@@ -422,7 +422,7 @@ body {
 }
 
 /* ========================================
-   PORTFOLIO SECTION - DARK BLUE BACKGROUND
+   PORTFOLIO SECTION - UPDATED FOR CURRENT HTML
    ======================================== */
 
 .portfolio {
@@ -440,8 +440,10 @@ body {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .portfolio-item {
@@ -452,27 +454,134 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(116, 185, 255, 0.2);
     backdrop-filter: blur(10px);
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+    cursor: pointer;
+    position: relative;
 }
 
 .portfolio-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 15px 40px rgba(116, 185, 255, 0.3);
+    border-color: #74b9ff;
 }
 
-.portfolio-item .placeholder-image {
+.portfolio-image {
     height: 200px;
     background: linear-gradient(135deg, rgba(116, 185, 255, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%);
+    border: 2px dashed rgba(116, 185, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #e0e0e0;
-    border: none;
-    border-radius: 0;
     font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.portfolio-item h3 {
+.portfolio-item:hover .portfolio-image {
+    background: linear-gradient(135deg, rgba(116, 185, 255, 0.2) 0%, rgba(9, 132, 227, 0.2) 100%);
+    border-color: rgba(116, 185, 255, 0.5);
+}
+
+.portfolio-content {
     padding: 1.5rem;
-    color: #ffffff;
+    margin-left: 0 !important; /* Override inline style */
+}
+
+.portfolio-content h3 {
+    color: #ffffff !important;
     font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.portfolio-content p {
+    color: #e0e0e0 !important;
     margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-decoration: none !important;
+}
+
+.portfolio-item:hover .portfolio-content h3 {
+    color: #74b9ff !important;
+}
+
+.portfolio-item:hover .portfolio-content p {
+    color: #ffffff !important;
+}
+
+/* Hover overlay effect */
+.portfolio-item::before {
+    content: "View Project →";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(116, 185, 255, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    text-decoration: none;
+}
+
+.portfolio-item:hover::before {
+    opacity: 1;
+}
+
+/* Override any inline styles */
+.portfolio-item * {
+    text-decoration: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-image {
+        height: 180px;
+    }
+    
+    .portfolio-content {
+        padding: 1.25rem;
+        margin-left: 0 !important;
+    }
+    
+    .portfolio-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .portfolio-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .portfolio-image {
+        height: 160px;
+    }
+    
+    .portfolio-content {
+        padding: 1rem;
+    }
 }
 
 /* ========================================
@@ -759,4 +868,32 @@ body {
     .container {
         padding: 0 15px;
     }
+}
+
+/* Additional CSS to style the about-commitment section */
+.about-commitment {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(116, 185, 255, 0.2);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+
+.about-commitment p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+}
+
+.about-commitment em {
+    color: #74b9ff;
+    font-style: italic;
+    font-weight: 600;
 }

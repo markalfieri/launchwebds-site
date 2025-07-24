@@ -422,7 +422,7 @@ body {
 }
 
 /* ========================================
-   PORTFOLIO SECTION - UPDATED FOR CURRENT HTML
+   PORTFOLIO SECTION - SMALLER BOXES, TEXT ONLY
    ======================================== */
 
 .portfolio {
@@ -440,7 +440,7 @@ body {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -454,11 +454,12 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(116, 185, 255, 0.2);
     backdrop-filter: blur(10px);
-    text-decoration: none !important;
-    color: inherit !important;
+    text-decoration: none;
+    color: inherit;
     display: block;
     cursor: pointer;
     position: relative;
+    min-height: 120px;
 }
 
 .portfolio-item:hover {
@@ -467,54 +468,41 @@ body {
     border-color: #74b9ff;
 }
 
+/* Remove the portfolio-image div completely */
 .portfolio-image {
-    height: 200px;
-    background: linear-gradient(135deg, rgba(116, 185, 255, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%);
-    border: 2px dashed rgba(116, 185, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #e0e0e0;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.portfolio-item:hover .portfolio-image {
-    background: linear-gradient(135deg, rgba(116, 185, 255, 0.2) 0%, rgba(9, 132, 227, 0.2) 100%);
-    border-color: rgba(116, 185, 255, 0.5);
+    display: none;
 }
 
 .portfolio-content {
-    padding: 1.5rem;
-    margin-left: 0 !important; /* Override inline style */
+    padding: 2rem 1.5rem;
+    text-align: center;
 }
 
 .portfolio-content h3 {
-    color: #ffffff !important;
+    color: #ffffff;
     font-weight: 600;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.75rem 0;
     font-size: 1.3rem;
     transition: color 0.3s ease;
 }
 
 .portfolio-content p {
-    color: #e0e0e0 !important;
+    color: #e0e0e0;
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.5;
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 .portfolio-item:hover .portfolio-content h3 {
-    color: #74b9ff !important;
+    color: #74b9ff;
 }
 
 .portfolio-item:hover .portfolio-content p {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
-/* Hover overlay effect */
+/* Hover overlay effect - KEPT AS REQUESTED */
 .portfolio-item::before {
     content: "View Project →";
     position: absolute;
@@ -551,13 +539,8 @@ body {
         gap: 1.5rem;
     }
     
-    .portfolio-image {
-        height: 180px;
-    }
-    
     .portfolio-content {
-        padding: 1.25rem;
-        margin-left: 0 !important;
+        padding: 1.5rem 1.25rem;
     }
     
     .portfolio-content h3 {
@@ -575,12 +558,8 @@ body {
         gap: 1rem;
     }
     
-    .portfolio-image {
-        height: 160px;
-    }
-    
     .portfolio-content {
-        padding: 1rem;
+        padding: 1.25rem 1rem;
     }
 }
 

@@ -22,7 +22,7 @@ body {
 }
 
 /* ========================================
-   NAVIGATION - FIXED SCROLLED TEXT COLOR
+   NAVIGATION - WITH SOCIAL MEDIA ICONS
    ======================================== */
 
 .navbar {
@@ -48,6 +48,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .nav-logo h2 {
@@ -61,6 +62,55 @@ body {
 /* When scrolled, logo text turns blue */
 .navbar.scrolled .nav-logo h2 {
     color: #0984e3;
+}
+
+/* ========================================
+   SOCIAL MEDIA ICONS - NEW SECTION
+   ======================================== */
+
+.nav-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon:hover {
+    background: rgba(116, 185, 255, 0.3);
+    border-color: #74b9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+}
+
+.social-icon svg {
+    transition: all 0.3s ease;
+}
+
+/* When scrolled, social icons adapt to new navbar style */
+.navbar.scrolled .social-icon {
+    background: rgba(9, 132, 227, 0.1);
+    color: #0984e3;
+    border-color: rgba(9, 132, 227, 0.2);
+}
+
+.navbar.scrolled .social-icon:hover {
+    background: rgba(9, 132, 227, 0.2);
+    border-color: #74b9ff;
+    color: #74b9ff;
 }
 
 .nav-menu {
@@ -137,9 +187,42 @@ body {
     color: #0984e3;
 }
 
+/* ========================================
+   RESPONSIVE DESIGN FOR NAVIGATION
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .nav-container {
+        gap: 1.5rem;
+    }
+    
+    .nav-social {
+        gap: 0.75rem;
+    }
+    
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
+    }
+    
+    .nav-social {
+        order: -1; /* Move social icons before the menu toggle */
+        gap: 0.5rem;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
     }
     
     .nav-menu {
@@ -171,6 +254,31 @@ body {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 1rem 15px;
+        gap: 1rem;
+    }
+    
+    .nav-social {
+        gap: 0.5rem;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1.5rem;
     }
 }
 

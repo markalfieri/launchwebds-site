@@ -117,17 +117,39 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.7';
             
-            // Simulate form submission (replace with actual server call)
-            setTimeout(() => {
-                console.log('Form submitted:', { name, email, projectType, message });
-                alert('Thank you for your message! We\'ll get back to you soon.');
-                
-                // Reset form and button
-                this.reset();
+            // Replace the setTimeout section with actual Formspree submission
+            fetch('https://formspree.io/f/movnaabp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: this.querySelectorAll('input[type="text"]')[1]?.value.trim() || '',
+                    company: this.querySelectorAll('input[type="text"]')[2]?.value.trim() || '',
+                    projectType: this.querySelectorAll('input[type="text"]')[3]?.value.trim() || '',
+                    message: message
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    this.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again or contact us directly at launchwebds@gmail.com');
+            })
+            .finally(() => {
+                // Reset button state
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
-            }, 1500);
+            });
         });
     }
 

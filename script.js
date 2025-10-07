@@ -50,86 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
     addMobileMenu();
     window.addEventListener('resize', addMobileMenu);
 
-    // Contact form handling with improved validation
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form elements
-            const inputs = this.querySelectorAll('input, textarea');
-            const name = this.querySelector('input[type="text"]').value.trim();
-            const email = this.querySelector('input[type="email"]').value.trim();
-            const projectType = this.querySelectorAll('input[type="text"]')[1].value.trim();
-            const message = this.querySelector('textarea').value.trim();
-            
-            // Enhanced validation
-            let isValid = true;
-            const errors = [];
-            
-            if (!name) {
-                errors.push('Name is required');
-                isValid = false;
-            }
-            
-            if (!email) {
-                errors.push('Email is required');
-                isValid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                errors.push('Please enter a valid email address');
-                isValid = false;
-            }
-            
-            if (!message) {
-                errors.push('Message is required');
-                isValid = false;
-            }
-            
-            // Remove previous error styling
-            inputs.forEach(input => {
-                input.style.borderColor = '';
-                input.style.boxShadow = '';
-            });
-            
-            if (!isValid) {
-                // Add error styling to invalid fields
-                if (!name) {
-                    this.querySelector('input[type="text"]').style.borderColor = '#ef4444';
-                    this.querySelector('input[type="text"]').style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
-                }
-                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    this.querySelector('input[type="email"]').style.borderColor = '#ef4444';
-                    this.querySelector('input[type="email"]').style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
-                }
-                if (!message) {
-                    this.querySelector('textarea').style.borderColor = '#ef4444';
-                    this.querySelector('textarea').style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
-                }
-                
-                alert('Please fix the following errors:\n' + errors.join('\n'));
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.7';
-            
-            // Simulate form submission (replace with actual server call)
-            setTimeout(() => {
-                console.log('Form submitted:', { name, email, projectType, message });
-                alert('Thank you for your message! We\'ll get back to you soon.');
-                
-                // Reset form and button
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-            }, 1500);
-        });
-    }
+    // Remove this entire contact form handling section
+    // const contactForm = document.querySelector('.contact-form form');
+    // if (contactForm) { ... }
 
     // FIXED: Enhanced scroll effect for navbar - let CSS handle styling
     window.addEventListener('scroll', function() {
